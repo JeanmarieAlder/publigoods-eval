@@ -177,3 +177,4 @@ pyrightconfig.json
 
 
 evaluations/*
+!evaluations/.gitkeep

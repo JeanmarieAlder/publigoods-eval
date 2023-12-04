@@ -1,0 +1,25 @@
+# Docker compose to test full deployment on a PRODUCTION environment
+# Make sure to place this file outside of the api project folder.
+# Both project folders (api and client) should be at the same level.
+# Create by: Jean-Marie Alder on 9 november 2023
+
+version: '3.8'
+
+services:
+  user_eval:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./evaluations:/evaluations
+    networks:
+      - web
+    labels:
+      - traefik.http.routers.user_eval.rule=Host(`publigoods.site`)
+      - traefik.http.routers.user_eval.tls=true
+      - traefik.http.routers.user_eval.tls.certresolver=lets-encrypt
+
+networks:
+  web:
+    external: true
