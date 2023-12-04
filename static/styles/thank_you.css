@@ -1,0 +1,25 @@
+/* static/styles/thank_you.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/thank_you.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+p {
+    font-size: 28px;
+    color: black;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+}

@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+   
+<p><b>Select the time 11:15 (11:15 AM)</b></p>
+
+   
+<label for="appt">Choose a time for your pickup:</label>
+
+<table border="1">
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '09:00')">09:00</button>
+            <button onclick="selectQuarter(this, '09:15')">09:15</button>
+            <button onclick="selectQuarter(this, '09:30')">09:30</button>
+            <button onclick="selectQuarter(this, '09:45')">09:45</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '10:00')">10:00</button>
+            <button onclick="selectQuarter(this, '10:15')">10:15</button>
+            <button onclick="selectQuarter(this, '10:30')">10:30</button>
+            <button onclick="selectQuarter(this, '10:45')">10:45</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '11:00')">11:00</button>
+            <button onclick="selectQuarter(this, '11:15')">11:15</button>
+            <button onclick="selectQuarter(this, '11:30')">11:30</button>
+            <button onclick="selectQuarter(this, '11:45')">11:45</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '12:00')">12:00</button>
+            <button onclick="selectQuarter(this, '12:15')">12:15</button>
+            <button onclick="selectQuarter(this, '12:30')">12:30</button>
+            <button onclick="selectQuarter(this, '12:45')">12:45</button>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '13:00')">13:00</button>
+            <button onclick="selectQuarter(this, '13:15')">13:15</button>
+            <button onclick="selectQuarter(this, '13:30')">13:30</button>
+            <button onclick="selectQuarter(this, '13:45')">13:45</button>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '14:00')">14:00</button>
+            <button onclick="selectQuarter(this, '14:15')">14:15</button>
+            <button onclick="selectQuarter(this, '14:30')">14:30</button>
+            <button onclick="selectQuarter(this, '14:45')">14:45</button>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '15:00')">15:00</button>
+            <button onclick="selectQuarter(this, '15:15')">15:15</button>
+            <button onclick="selectQuarter(this, '15:30')">15:30</button>
+            <button onclick="selectQuarter(this, '15:45')">15:45</button>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '16:00')">16:00</button>
+            <button onclick="selectQuarter(this, '16:15')">16:15</button>
+            <button onclick="selectQuarter(this, '16:30')">16:30</button>
+            <button onclick="selectQuarter(this, '16:45')">16:45</button>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '17:00')">17:00</button>
+            <button onclick="selectQuarter(this, '17:15')">17:15</button>
+            <button onclick="selectQuarter(this, '17:30')">17:30</button>
+            <button onclick="selectQuarter(this, '17:45')">17:45</button>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            <button onclick="selectQuarter(this, '18:00')">18:00</button>
+            <button onclick="selectQuarter(this, '18:15')">18:15</button>
+            <button onclick="selectQuarter(this, '18:30')">18:30</button>
+            <button onclick="selectQuarter(this, '18:45')">18:45</button>
+        </td>
+    </tr>
+
+    <!-- Repeat the above rows for other hours -->
+
+</table>
+
+{% if has_next %}
+    <form action="/instructions2" method="get">
+{% else %}
+    <form action="/quizz" method="get">
+{% endif %}
+
+    <input type="text" id="appt" name="appt" required style="height: 0px; width: 0px; border: 0px; padding: 0px;"> 
+    <input hidden type="text" name="next_id" value="{{next_id}}">
+    <input hidden type="text" name="prev_id" value="1">
+
+
+    <input id="tp-1-submit" type="submit" value="Confirm" disabled>
+</form>
+
+<style>
+    .selected {
+        background-color: green;
+        color: white;
+    }
+</style>
+
+<script>
+    function selectQuarter(button, time) {
+        // Remove 'selected' class from all buttons
+        var allButtons = document.querySelectorAll('button');
+        allButtons.forEach(function (btn) {
+            btn.classList.remove('selected');
+        });
+        document.getElementById("tp-1-submit").disabled = false;
+
+        // Add 'selected' class to the clicked button
+        button.classList.add('selected');
+        console.log()
+        document.getElementById("appt").value = time;
+
+        // Add your logic for handling the selected quarter
+        console.log('Selected Quarter:', time);
+    }
+</script>

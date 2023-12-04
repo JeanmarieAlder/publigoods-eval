@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+
+    <title>User Evaluation Quizz</title>
+</head>
+<body>
+
+    <h1>Thank You for Participating!</h1>
+
+    <p>
+        We appreciate your time and input in this user evaluation.
+    </p>
+    <p>
+        Please take two more minutes to answer these short questions about your experience with these timepickers.
+    </p>
+
+    <form action="/thank_you" method="post">
+
+        <label for="question1">Question 1:</label>
+        <input type="text" id="question1" name="question1" placeholder="Your answer">
+
+        <br>
+
+        <label for="question2">Question 2:</label>
+        <input type="text" id="question2" name="question2" placeholder="Your answer">
+
+        <br>
+
+        <label for="question3">Question 3:</label>
+        <input type="text" id="question3" name="question3" placeholder="Your answer">
+
+        <br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+</html>

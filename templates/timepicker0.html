@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+
+
+{% if has_next %}
+<form action="/instructions2" method="get">
+{% else %}
+<form action="/quizz" method="get">
+{% endif %}
+
+    <p><b>Select the time 11:15 (11:15 AM)</b></p>
+
+    <label for="appt">Choose a time for your pickup:</label>
+    <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
+
+    <small>Office hours are 9:00 to 18:00</small>
+
+    <input hidden type="text" name="next_id" value="{{next_id}}">
+    <input hidden type="text" name="prev_id" value="0">
+    <br><br>
+    <input type="submit" value="Confirm">
+</form>

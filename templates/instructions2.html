@@ -1,0 +1,27 @@
+<!-- templates/instructions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <title>Publigoods - Instructions</title>
+</head>
+<body>
+    <h1>Publigoods - Instructions</h1>
+
+    <p>
+        <h3>Please read carefully before continuing.</h2>
+    </p>
+    <p>
+        Great! Now, please <b>select the same time</b>, but using a different method. 
+    </p>
+    <p>
+        The <b>time to select is still 11:15 (11:15 pm)</b>. You may start as soon as you're ready.
+    </p>
+
+    <form action="/timepicker/{{next_id}}" method="get">
+        <input type="submit" value="Start">
+    </form>
+</body>
+</html>
