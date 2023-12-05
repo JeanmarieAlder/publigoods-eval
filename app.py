@@ -17,7 +17,10 @@ def index():
     print(all_headers)
     for header, value in all_headers.items():
         session[header] = value
-    del session['Cookie']
+    try:
+        del session['Cookie']
+    except Exception as e:
+        print("new session, no cookies to del.")
     print(session)
     return render_template('index.html')
 
