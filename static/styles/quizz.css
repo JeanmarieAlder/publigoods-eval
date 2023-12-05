@@ -1,0 +1,105 @@
+/* static/styles/quizz.css */
+
+/* General styling for the form */
+form {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Styling for labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+/* Styling for textareas */
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling for radio buttons and labels */
+input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle; 
+}
+
+/* Align radio buttons and labels in the same row */
+input[type="radio"] + label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Styling for form input elements */
+input[type="radio"],
+input[type="submit"] {
+    padding: 8px 15px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="radio"]:hover,
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.quizz-radio {
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+/* Card styling */
+.card {
+    max-width: 250px;
+    width: 250px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    position: relative;
+}
+
+.card img {
+    width: 95%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid #000; /* Black border around the image */
+}
+
+.card p {
+    padding: 10px;
+    text-align: center;
+    color: lightcoral;
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.8); /* Add background for better readability */
+}
+
+/* Responsive styling for form elements */
+@media screen and (max-width: 600px) {
+    form {
+        padding: 10px;
+    }
+
+    input[type="radio"],
+    input[type="submit"] {
+        width: 100%;
+        margin-top: 5px;
+    }
+}

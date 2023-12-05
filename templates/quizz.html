@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/quizz.css') }}">
 
     <title>User Evaluation Quizz</title>
 </head>
@@ -18,21 +19,60 @@
         Please take two more minutes to answer these short questions about your experience with these timepickers.
     </p>
 
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/design_a.JPG') }}" alt="Card 1 Image">
+        <p>This is <b>design A</b>, timepicker</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="{{ url_for('static', filename='images/design_b.JPG') }}" alt="Card 2 Image">
+        <p>This is <b>design B</b>, timetable</p>
+    </div>
+
     <form action="/thank_you" method="post">
 
-        <label for="question1">Question 1:</label>
-        <input type="text" id="question1" name="question1" placeholder="Your answer">
+        <label for="design_preference">Did you prefer design A or design B?</label>
+        <div class="quizz-radio">
+            <input type="radio" id="design_a" name="design_preference" value="A" required>
+            <label for="design_a">Design A</label>
+            <input type="radio" id="design_b" name="design_preference" value="B" required>
+            <label for="design_b">Design B</label>
+        </div>
 
-        <br>
+        <label for="optional_reason">Optional: Why did you prefer the design chosen in the previous question?</label>
+        <textarea id="optional_reason" name="optional_reason" rows="4"></textarea>
 
-        <label for="question2">Question 2:</label>
-        <input type="text" id="question2" name="question2" placeholder="Your answer">
+        <label for="time_selection_preference">In your opinion, did you select the time faster with design A or design B?</label>
+        <div class="quizz-radio">
+            <input type="radio" id="faster_with_a" name="time_selection_preference" value="A" required>
+            <label for="faster_with_a">Faster with Design A</label>
+            <input type="radio" id="faster_with_b" name="time_selection_preference" value="B" required>
+            <label for="faster_with_b">Faster with Design B</label>
+        </div>
 
-        <br>
+        <label for="keyboard_usage">For design A, did you use your keyboard to fill in the time?</label>
+        <div class="quizz-radio">
+            <input type="radio" id="keyboard_yes" name="keyboard_usage" value="Yes" required>
+            <label for="keyboard_yes">Yes</label>
+            <input type="radio" id="keyboard_no" name="keyboard_usage" value="No" required>
+            <label for="keyboard_no">No</label>
+        </div>
 
-        <label for="question3">Question 3:</label>
-        <input type="text" id="question3" name="question3" placeholder="Your answer">
-
+        <label for="preferred_way_to_fill">Do you have a preferred way to fill out timers when using a computer with a web browser?</label>
+        <div class="quizz-radio">
+            <input type="radio" id="scrollable_list" name="preferred_way_to_fill" value="Scrollable List" required>
+            <label for="scrollable_list">Scrollable List</label>
+            <input type="radio" id="clock" name="preferred_way_to_fill" value="Clock" required>
+            <label for="clock">Clock</label>
+            <input type="radio" id="typing_numbers" name="preferred_way_to_fill" value="Typing Numbers" required>
+            <label for="typing_numbers">Typing Numbers</label>
+            <input type="radio" id="multiple_choice_timetable" name="preferred_way_to_fill" value="Multiple Choice Timetable" required>
+            <label for="multiple_choice_timetable">Multiple Choice Timetable</label>
+            <input type="radio" id="other" name="preferred_way_to_fill" value="Other" required>
+            <label for="other">Other</label>
+        </div>
         <br>
 
         <input type="submit" value="Submit">
