@@ -1,3 +1,7 @@
 Flask==3.0.0
 Flask-Bootstrap==3.3.7.1
-gunicorn
+gunicorn # For deployment
+matplotlib==3.8.2
+pandas==2.1.4
+scipy==1.11.4
+seaborn==0.13.0

@@ -26,7 +26,15 @@ This web application is designed for user evaluation, allowing users to test two
     python app.py
     ```
 
-4. Open your web browser and navigate to `http://localhost:5000/` to access the application.
+4. Use Jupyter notebooks.
+
+- Step 2 (install dependencies) should be done.
+- Make sure to install jupyter notebook **inside virtual env**: ```pip install notebook```
+- Set the virtual environment as a Jupyter Kernel: ```python -m ipykernel install --user --name=venv``` (adapt name according to you virtual env name)
+- Start notebook using ```jupyter notebook```
+- When selecting a notebook, make sure to select the venv kernel.
+
+5. Open your web browser and navigate to `http://localhost:5000/` to access the application.
 
 ## Additional Information
 
